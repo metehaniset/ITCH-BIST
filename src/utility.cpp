@@ -1,7 +1,7 @@
 #include <utility.hpp>
 
 side_type SIDE_DEFAULT = 0;
-id_type ID_DEFAULT = LLONG_MAX;
+id_type ID_DEFAULT = ULLONG_MAX;
 price_type PRICE_DEFAULT = -1;
 size_type SIZE_DEFAULT = -1;
 
