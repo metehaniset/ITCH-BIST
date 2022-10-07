@@ -4,7 +4,17 @@
 I changed the code according to https://www.borsaistanbul.com/files/bistech-itch-protocol-specification.pdf
 
 
+## Usage example
+
+To reconstruct the book compile and use the binary in bin folder:
+
+```
+
 bin/BookConstructor /home/hft/data/binary/20200804/TR-1.VRD /home/hft/data/book/ /home/hft/data/messages/ 10 GARAN.E
+
+```
+
+
 
 
 
