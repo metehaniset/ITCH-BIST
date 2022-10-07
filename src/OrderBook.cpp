@@ -5,7 +5,7 @@ std::string OrderBook::getString(const size_t &level) const {
     size_t buyDepth = buySide.size(); // The number of bid prices available in the book
     size_t sellDepth = sellSide.size(); // The number of ask prices available in the book
     std::ostringstream string_builder;
-    string_builder << timestamp << ",";
+    string_builder << timestamp_s << "," << timestamp_ns << ",";
 
     // The best bid price is the smallest value stored in ordered map
     std::map<price_type,size_type>::const_reverse_iterator it_buy = buySide.rbegin();
@@ -66,6 +66,10 @@ bool OrderBook::checkBookConsistency(){
     }
 }
 
-void OrderBook::setTimeStamp(const time_type &t){
-    timestamp = t;
+void OrderBook::setTimeStamp_s(const time_type &t){
+    timestamp_s = t;
 }
+void OrderBook::setTimeStamp_ns(const time_type &t){
+    timestamp_ns = t;
+}
+
