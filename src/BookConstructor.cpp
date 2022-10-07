@@ -20,8 +20,8 @@ BookConstructor::BookConstructor(const std::string &inputMessageCSV,
     messageWriter(outputMessageCSV),
     bookWriter(outputBookCSV),
     levels(_levels){
-        messageWriter.writeLine("time,type,id,side,size,price,cancSize,execSize,oldId,oldSize,oldPrice,mpid\n");
-        std::string bookHeader = "time,";
+        messageWriter.writeLine("time,time_ns,type,id,side,size,price,cancSize,execSize,oldId,oldSize,oldPrice,mpid\n");
+        std::string bookHeader = "time,time_ns,";
         for(size_t i = 1; i<=levels; i++){
             std::string num = std::to_string(i);
             bookHeader += num+"_bid_price,"+num+"_bid_vol,"+num+"_ask_price,"+num+"_ask_vol,";
@@ -148,7 +148,8 @@ bool BookConstructor::updateMessage(void){
  *
  */
 void BookConstructor::updateBook(void){
-    book.setTimeStamp(message.getTimeStamp());
+    book.setTimeStamp_s(message.getTimeStamp_s());
+    book.setTimeStamp_ns(message.getTimeStamp_ns());
     char typeMsg = message.getType();
 
     if(typeMsg == 'A'){
