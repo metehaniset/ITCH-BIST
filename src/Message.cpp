@@ -1,11 +1,9 @@
 #include "Message.hpp"
 
-Message::Message(const char& _type,
-    const id_type& _id,
-    const time_type& _timestamp):
+Message::Message(const char& _type, const id_type& _id, const time_type& _timestamp_s, const time_type& _timestamp_ns):
         type(_type),
         id(_id),
-        timestamp(_timestamp){};
+        timestamp_s(_timestamp_s), timestamp_ns(_timestamp_ns){};
 
 void Message::setType(const char& _type){
     if(_type =='A' || _type == 'F'){
@@ -50,8 +48,12 @@ void Message::setId(const id_type& _id){
     id = _id;
 }
 
-void Message::setTimeStamp(const time_type& _timestamp){
-    timestamp = _timestamp;
+void Message::setTimeStamp_s(const time_type& _timestamp_s){
+    timestamp_s = _timestamp_s;
+}
+
+void Message::setTimeStamp_ns(const time_type& _timestamp_ns){
+    timestamp_ns = _timestamp_ns;
 }
 
 void Message::setSide(const side_type& _side){
@@ -87,7 +89,7 @@ void Message::setOldSize(const size_type& _size){
 }
 
 void Message::setMPID(const char& _mpid){
-    strncpy(mpid, &_mpid, 4); mpid[4] = 0;
+    strncpy(mpid, &_mpid, 7); mpid[7] = 0;
 }
 
 // getters
@@ -99,8 +101,11 @@ id_type Message::getId() const{
     return id;
 }
 
-time_type Message::getTimeStamp()const{
-    return timestamp;
+time_type Message::getTimeStamp_s()const{
+    return timestamp_s;
+}
+time_type Message::getTimeStamp_ns()const{
+    return timestamp_ns;
 }
 
 side_type Message::getSide()const{
@@ -146,7 +151,7 @@ bool Message::isEmpty()const{
 std::string Message::getString(void)const{
     std::ostringstream string_builder;
     if(!isEmpty()){
-        string_builder  << timestamp << ",";
+        string_builder  << timestamp_s << "," << timestamp_ns << ",";
     }
     else{
         string_builder  << ",";
@@ -205,7 +210,7 @@ std::string Message::getString(void)const{
 void Message::print() const {
     std::cout << "Message type   :" << type <<std::endl;
     std::cout << "Id             :"<< id << std::endl;
-    std::cout << "timestamp      :" << timestamp << std::endl;
+    std::cout << "timestamp      :" << timestamp_s << " " << timestamp_ns << std::endl;
     std::cout << "Side           :" << side << std::endl;
     std::cout << "Price          :"<< price << std::endl;
     std::cout << "Remaining size :" << remSize << std::endl;
