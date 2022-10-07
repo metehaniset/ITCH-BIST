@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
+#include <math.h>
 #include <inttypes.h> // PRIux
 #include <cstring>
 #include <Message.hpp>
@@ -16,8 +17,11 @@ private:
     std::ifstream file;
     // std::string messageToFilter = "AFEXDU"; // QC
     std::string stock;
+    std::uint32_t orderBookId = 0;
+    std::uint32_t numberOfDecimals = 0;
+    std::uint64_t lastTimestamp = 0;
     unsigned count = 0;
-    char message[64];
+    char message[256];
     bool validFile = 0;
     time_t start;
     // bool debug = 0;
