@@ -12,7 +12,7 @@ To reconstruct the book compile and use the binary in bin folder:
 
 bin/BookConstructor /home/hft/data/binary/20200804/TR-1.VRD /home/hft/data/book/ /home/hft/data/messages/ 10 GARAN.E
 
-or 
+# or 
 
 cat 20200804/TR-* 20200805/TR-* 20200806/TR-* 20200807/TR-* > 20200804_20200807.itch
 bin/BookConstructor /home/hft/data/binary/20200804_20200807.itch /home/hft/data/book/ /home/hft/data/messages/ 10 GARAN.E
