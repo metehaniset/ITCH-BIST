@@ -1,7 +1,7 @@
-# NASDAQ ITCH 50 Book Constructor
-> Given the NASDAQ Total View ITCH 50 data feed, reconstruct the full depth order book and related messages.
+# BIST ITCH Book Constructor
+> Given the BIST ITCH data feed, reconstruct the full depth order book and related messages.
 
-This is an efficient c++ implementation of reconstructing a Limit Order Book from data feed messages issued by NASDAQ according to the ITCH 50 data protocol specified at <https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHSpecification.pdf>. Some samples data are publicly available through NASDAQ public ftp at <ftp://emi.nasdaq.com/ITCH/>. The program outputs two csv files containing the messages and the related limit order book for the relative stock.
+
 
 # Folder Structure
 
