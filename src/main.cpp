@@ -41,7 +41,7 @@ int main(int argc, char * argv[]){
     std::string outBookFileName = outBookDirectory+nameFile+"_"+stock+"_book_"+std::to_string(levels)+".csv";
     std::string outMessageFileName = outMessageDirectory+nameFile+"_"+stock+"_message.csv";
     std::string stockPadded = stock;
-    stockPadded.insert(stockPadded.end(), 8 - stockPadded.size(), ' ');
+    stockPadded.insert(stockPadded.end(), 32 - stockPadded.size(), ' ');
 
     BookConstructor BookConstructor(pathFile,
         outMessageFileName,
