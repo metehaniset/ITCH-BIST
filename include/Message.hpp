@@ -10,7 +10,8 @@ class Message{
 private:
     char type = 0;
     id_type id = ID_DEFAULT;
-    time_type timestamp = 0;
+    time_type timestamp_s = 0;
+    time_type timestamp_ns = 0;
 
     side_type side = SIDE_DEFAULT;
     price_type price = PRICE_DEFAULT;
@@ -21,12 +22,11 @@ private:
     id_type oldId = ID_DEFAULT;
     price_type oldPrice = PRICE_DEFAULT;
     size_type oldSize = SIZE_DEFAULT;
-    char mpid[5] = "";
+    char mpid[8] = "";
 
 public:
     Message() = default;
-    Message(const char& type,const id_type &id,
-        const time_type &timestamp);
+    Message(const char& type,const id_type &id, const time_type &timestamp_s, const time_type &timestamp_ns);
 
     /**
      * Setter for the message. Transforms the Nasdaq type definitions in ours.
@@ -43,7 +43,8 @@ public:
      */
     void setType(const char &);
     void setId(const id_type &);
-    void setTimeStamp(const time_type &);
+    void setTimeStamp_s(const time_type &);
+    void setTimeStamp_ns(const time_type &);
     void setSide(const side_type &);
     void setPrice(const price_type &);
     void setRemSize(const size_type &);
@@ -56,7 +57,8 @@ public:
 
     char getType(void) const;
     id_type getId(void) const;
-    time_type getTimeStamp(void) const;
+    time_type getTimeStamp_s(void) const;
+    time_type getTimeStamp_ns(void) const;
     side_type getSide(void) const;
     price_type getPrice(void) const;
     size_type getRemSize(void) const;
