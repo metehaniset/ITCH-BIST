@@ -9,7 +9,7 @@ Order::Order(id_type _id,
         side(_side),
         size(_size),
         price(_price){
-            strncpy(mpid, _mpid, 4); mpid[4] = 0;
+            strncpy(mpid, _mpid, 7); mpid[7] = 0;
         }
 
 id_type Order::getId(void) const{
