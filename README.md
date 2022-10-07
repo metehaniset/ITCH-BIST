@@ -1,6 +1,9 @@
 # BIST ITCH Book Constructor
 > Given the BIST ITCH data feed, reconstruct the full depth order book and related messages.
 
+I changed the code according to https://www.borsaistanbul.com/files/bistech-itch-protocol-specification.pdf
+
+
 
 
 # Folder Structure
