@@ -16,7 +16,8 @@
  */
 
 class OrderBook{
-    time_type timestamp;
+    time_type timestamp_s;
+    time_type timestamp_ns;
     std::map<price_type, size_type> buySide;
     std::map<price_type, size_type> sellSide;
 
@@ -42,7 +43,8 @@ class OrderBook{
      *
      */
     void modifySize(price_type, size_type, side_type);
-    void setTimeStamp(const time_type &);
+    void setTimeStamp_s(const time_type &);
+    void setTimeStamp_ns(const time_type &);
 
     /**
      * Check if the biggest bid price is less than smallest ask
